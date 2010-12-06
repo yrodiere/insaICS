@@ -1,2 +1,10 @@
+# This program is free software. It comes without any warranty, to
+# the extent permitted by applicable law. You can redistribute it
+# and/or modify it under the terms of the Do What The Fuck You Want
+# To Public License, Version 2, as published by Sam Hocevar. See
+# http://sam.zoy.org/wtfpl/COPYING for more details.
+#
+# Convert from DOS to Unix end of lines
 s///g
+# Sum up and sort all information for each event
 s/^SUMMARY[^:]*:\([[:digit:]] \?IF[[:digit:]]\?\) \([^ ]\+\) \(.\+-[[:digit:]]\+\) \(\(.\+\) avec \(.\+\)\|\(.\+\)\)\?/SUMMARY:\2 \5\7\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=CHAIR;PARTSTAT=ACCEPTED;CN="\6":mailto:foo@bar.com\nDESCRIPTION:Élèves concernés : \1\\nModule : \3\\nProfs : \6/g
