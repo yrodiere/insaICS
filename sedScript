@@ -1,0 +1,7 @@
+# Add description section :
+##(BUGGY)
+s/^\(SUMMARY;[^ ]*\) \(.*\)/&\nDESCRIPTION: \2/g
+# Standard course format :
+#s/^\(SUMMARY;[^ ]*\) \(.*-[[:digit:]] \(.*\) avec \(.*\)\)/SUMMARY: \3/g
+# Exceptions :
+#s/^\(SUMMARY;[^ ]*\) .*\(EPS\|Langues\|Jour férié\|Journée internationale\|Rencontres IF\).*$/SUMMARY: \2/g
