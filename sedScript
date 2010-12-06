@@ -1,7 +1,2 @@
-# Add description section :
-##(BUGGY)
-s/^\(SUMMARY;[^ ]*\) \(.*\)/&\nDESCRIPTION: \2/g
-# Standard course format :
-#s/^\(SUMMARY;[^ ]*\) \(.*-[[:digit:]] \(.*\) avec \(.*\)\)/SUMMARY: \3/g
-# Exceptions :
-#s/^\(SUMMARY;[^ ]*\) .*\(EPS\|Langues\|Jour férié\|Journée internationale\|Rencontres IF\).*$/SUMMARY: \2/g
+s///g
+s/^SUMMARY[^:]*:\([[:digit:]] \?IF[[:digit:]]\?\) \([^ ]\+\) \(.\+-[[:digit:]]\+\) \(\(.\+\) avec \(.\+\)\|\(.\+\)\)\?/SUMMARY:\2 \5\7\nATTENDEE;CUTYPE=INDIVIDUAL;ROLE=CHAIR;PARTSTAT=ACCEPTED;CN="\6":mailto:foo@bar.com\nDESCRIPTION:Élèves concernés : \1\\nModule : \3\\nProfs : \6/g
